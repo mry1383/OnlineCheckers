@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
  namespace MohreFuntions 
  {
+using UnityEngine;
+using UnityEngine.UI;
   
   public class MohreFuntion : MonoBehaviour 
   {
-     int leftmove ,rightmove;
+    public int leftmove ,rightmove;
     public  int NutsMoveposition (int index,string NutMode,bool attack)
     {
         if(NutMode=="up")
@@ -42,7 +44,7 @@ using UnityEngine;
 
   }
   public class earthposition : MonoBehaviour {
-    bool [] gridenabled = new bool [65];
+   public bool [] gridenabled = new bool [65];
     public bool gridmode(int index) 
       {
        return gridenabled[index];
@@ -58,9 +60,9 @@ using UnityEngine;
   }
    
   public class Move :  MonoBehaviour {
-    public void normalmove(Transform side,Transform target,float speed)
+    public void normalmove(RectTransform side,RectTransform vec,float speed)
     {
-       side.position = Vector3.MoveTowards(side.position,target.position,speed*Time.deltaTime);
+       side.position = Vector3.MoveTowards(side.anchoredPosition ,vec.anchoredPosition,speed*Time.deltaTime);
     }
     
     public void attackmove()

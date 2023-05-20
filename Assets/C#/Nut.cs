@@ -6,13 +6,17 @@ using UnityEngine.UI;
 public class Nut : MonoBehaviour
 {
     public GameObject leftmove,rightmove;
-    public Transform x;
+    public Vector3 target = new Vector3(0f,0f,0f);
     int mousenumber = 0;
     float movespped = 5f;
    Move nutmove = new Move();
    MohreFuntion targetFinder = new MohreFuntion();
+   public RectTransform  trans,rightpos,leftpos;
     void Start()
     {
+      trans = GetComponent<RectTransform>();
+      rightpos = rightmove.GetComponent<RectTransform>();
+      leftpos = leftmove.GetComponent<RectTransform>();
      leftmove.SetActive(false);
      rightmove.SetActive(false);
     }
@@ -49,7 +53,11 @@ public class Nut : MonoBehaviour
     if(side =="right")
     {
         
-       nutmove.normalmove(transform,x,movespped);
+       nutmove.normalmove(trans,rightpos,movespped);
+    }
+    else
+    {
+      nutmove.normalmove(trans,leftpos,movespped);
     }
       
    }
