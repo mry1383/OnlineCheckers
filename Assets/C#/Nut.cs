@@ -7,7 +7,7 @@ public class Nut : MonoBehaviour
 {
     public GameObject leftmove,rightmove;
     public Vector3 target = new Vector3(0f,0f,0f);
-    int mousenumber = 0;
+    int mousenumber = 0 , index = 0;
     float movespped = 5f;
    Move nutmove = new Move();
    MohreFuntion targetFinder = new MohreFuntion();
@@ -52,7 +52,8 @@ public class Nut : MonoBehaviour
    {
     if(side =="right")
     {
-        
+      int flux  = targetFinder.NutsMoveposition(index,"up",false);
+      
        nutmove.normalmove(trans,rightpos,movespped);
     }
     else
