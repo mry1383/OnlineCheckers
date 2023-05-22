@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftmove: {fileID: 6002989789252788925}
   rightmove: {fileID: 5718501000638739005}
+  startmove: 0
   target: {x: 0, y: 0, z: 0}
   mousenumber: 0
   index: 0
@@ -478,7 +479,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6740554923795513199}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 396254099302514762}
+        m_TargetAssemblyTypeName: Nutmove, Assembly-CSharp
+        m_MethodName: Side
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &396254099302514762
 MonoBehaviour:
   m_ObjectHideFlags: 0
