@@ -155,6 +155,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   mousenumber: 0
   index: 0
+  targetnumber: 0
   trans: {fileID: 0}
   rightpos: {fileID: 0}
   leftpos: {fileID: 0}
@@ -491,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position_index: 0
-  Mode: 
-  Sidepos: 
+  Mode: up
+  Sidepos: left
   Attack: 0
   head: {fileID: 1761939424899053191}

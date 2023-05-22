@@ -21,7 +21,10 @@ public class Nutmove : MonoBehaviour
     }
     public void Side()
     {
+        
        int position = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
        print(position);
+       head.targetnumber = position;
+       head.startmove=true;
     }
 }

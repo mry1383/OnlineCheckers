@@ -5,17 +5,20 @@ using MohreFuntions;
 using UnityEngine.UI;
 public class Nut : MonoBehaviour
 {
+      Mohre HeadCode;
     public GameObject leftmove,rightmove;
     //take side index position;
     private Grids _Side;
+    public bool startmove = false;
     public Vector3 target = new Vector3(0f,0f,0f);
-    public int mousenumber = 0 , index = 0;
+    public int mousenumber = 0 , index = 0,targetnumber;
     float movespped = 5f;
    Move nutmove = new Move();
    MohreFuntion targetFinder = new MohreFuntion();
    public RectTransform  trans,rightpos,leftpos;
     void Start()
     {
+      HeadCode = GameObject.Find("CheckersManagerUI").GetComponent<Mohre>();
       trans = GetComponent<RectTransform>();
       rightpos = rightmove.GetComponent<RectTransform>();
       leftpos = leftmove.GetComponent<RectTransform>();
@@ -26,7 +29,7 @@ public class Nut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+         move(startmove);
         if(Input.GetMouseButtonDown(0))
         {
            //mouseClick();
@@ -65,9 +68,16 @@ public class Nut : MonoBehaviour
       index = _Side.index;
     }
   }
-   public void FindYourSide()
+   public void move(bool start = false)
    {
-      
+    if(start)
+    {
+    RectTransform TargetRT = HeadCode.Nutposition[targetnumber].GetComponent<RectTransform>();
+    nutmove.normalmove(trans,TargetRT,movespped);
+                         leftmove.SetActive(false);
+                     rightmove.SetActive(false);
+    }
+
    }
 
 

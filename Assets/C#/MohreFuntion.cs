@@ -72,7 +72,7 @@ using UnityEngine.UI;
   public class Move :  MonoBehaviour {
     public void normalmove(RectTransform side,RectTransform vec,float speed)
     {
-       side.position = Vector3.MoveTowards(side.anchoredPosition ,vec.anchoredPosition,speed*Time.deltaTime);
+       side.position = Vector3.Lerp(side.position, vec.position, speed*Time.deltaTime);
     }
     
     public void attackmove()
