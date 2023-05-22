@@ -8,6 +8,7 @@ public class Nutmove : MonoBehaviour
    public int position_index;
    public string Mode,Sidepos;
    public bool Attack;
+   public Nut head;
     void Start()
     {
         
@@ -20,7 +21,7 @@ public class Nutmove : MonoBehaviour
     }
     public void Side()
     {
-       int position = funtion.NutsMoveposition(position_index,Mode,Attack,Sidepos);
+       int position = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
        print(position);
     }
 }

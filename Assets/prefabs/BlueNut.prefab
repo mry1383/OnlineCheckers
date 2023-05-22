@@ -153,6 +153,8 @@ MonoBehaviour:
   leftmove: {fileID: 6002989789252788925}
   rightmove: {fileID: 5718501000638739005}
   target: {x: 0, y: 0, z: 0}
+  mousenumber: 0
+  index: 0
   trans: {fileID: 0}
   rightpos: {fileID: 0}
   leftpos: {fileID: 0}
@@ -166,7 +168,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1.0176458}
@@ -353,6 +355,7 @@ MonoBehaviour:
   Mode: up
   Sidepos: right
   Attack: 0
+  head: {fileID: 1761939424899053191}
 --- !u!1 &6002989789252788925
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,3 +494,4 @@ MonoBehaviour:
   Mode: 
   Sidepos: 
   Attack: 0
+  head: {fileID: 1761939424899053191}

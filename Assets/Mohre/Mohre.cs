@@ -29,8 +29,8 @@ public class Mohre : MonoBehaviour
          for(int j=1;j<=8;j++)
          {
             string F;
-            // F = i+","+j;
-            F = i.ToString();
+             F = i+","+j;
+           // F = i.ToString();
             Nutposition[nutnumber] = GameObject.Find(F);
             nutnumber++; 
          }

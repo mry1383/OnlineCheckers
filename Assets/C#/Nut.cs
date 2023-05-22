@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class Nut : MonoBehaviour
 {
     public GameObject leftmove,rightmove;
+    //take side index position;
+    private Grids _Side;
     public Vector3 target = new Vector3(0f,0f,0f);
-    int mousenumber = 0 , index = 0;
+    public int mousenumber = 0 , index = 0;
     float movespped = 5f;
    Move nutmove = new Move();
    MohreFuntion targetFinder = new MohreFuntion();
@@ -27,7 +29,7 @@ public class Nut : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-           mouseClick();
+           //mouseClick();
         }
     }
 
@@ -47,7 +49,26 @@ public class Nut : MonoBehaviour
                      mousenumber=0;
              }
   }
-  
+  void OnTriggerEnter2D(Collider2D other)
+  {
+    if(other.tag=="Grid")
+    {
+      _Side = other.gameObject.GetComponent<Grids>();
+      index = _Side.index;
+    }
+  }
+    void OnTriggerStay2D(Collider2D other)
+  {
+    if(other.tag=="Grid")
+    {
+      _Side = other.gameObject.GetComponent<Grids>();
+      index = _Side.index;
+    }
+  }
+   public void FindYourSide()
+   {
+      
+   }
 
 
 }
