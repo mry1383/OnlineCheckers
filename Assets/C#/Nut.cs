@@ -27,7 +27,7 @@ public class Nut : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-          // mouseClick();
+           mouseClick();
         }
     }
 
@@ -47,20 +47,7 @@ public class Nut : MonoBehaviour
                      mousenumber=0;
              }
   }
-  //click for move
-   public void movetoside(string side)
-   {
-    if(side =="right")
-    {
-      int flux  = targetFinder.NutsMoveposition(index,"up",false);
-      
-       nutmove.normalmove(trans,rightpos,movespped);
-    }
-    else
-    {
-      nutmove.normalmove(trans,leftpos,movespped);
-    }
-      
-   }
+  
+
 
 }

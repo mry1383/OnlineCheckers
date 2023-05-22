@@ -10,8 +10,8 @@ using UnityEngine.UI;
   
   public class MohreFuntion : MonoBehaviour 
   {
-    public int leftmove ,rightmove;
-    public  int NutsMoveposition (int index,string NutMode,bool attack)
+    public int leftmove ,rightmove ;
+    public  int NutsMoveposition (int index,string NutMode,bool attack,string side)
     {
         if(NutMode=="up")
         {
@@ -36,8 +36,18 @@ using UnityEngine.UI;
             rightmove = index  -(7*2);
             }
         }
+        if(side =="left")
+        {
           return leftmove;
+        }
+       else if(side =="right")
+        {
           return rightmove;
+        }
+        else
+          return 0;
+          
+          
 
 
     }  
