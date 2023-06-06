@@ -58,17 +58,17 @@ public class Mohre : MonoBehaviour
         enabled(i);
       }
       //Red Nut
-      for(int i=40;i<64;i+=2)
+      for(int i=41;i<64;i+=2)
       {
          //Set Nut Line 2
-         if(i==48)
+         if(i==49)
          {
-            i++;
+            i--;
          }
          //Set Nut Line 3
-         else if(i==57)
+         else if(i==56)
         {
-            i--;
+            i++;
          }
       GameObject rNut= Instantiate(RedNut,Nutposition[i].transform.position,transform.rotation);
        rNut.transform.SetParent(transform.Find("Nuts"));

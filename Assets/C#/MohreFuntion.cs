@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
  namespace MohreFuntions 
  {
-using UnityEngine;
-using UnityEngine.UI;
   
   public class MohreFuntion : MonoBehaviour 
   {
@@ -54,11 +52,10 @@ using UnityEngine.UI;
 
   }
   public class earthposition : MonoBehaviour {
-   public bool [] gridenabled = new bool [65];
+    bool [] gridenabled = new bool [65];
     public bool gridmode(int index) 
       {
-       return gridenabled[index];
-
+      return   gridenabled[index];
       }
     
     public void MapGridEnabled(int index,bool isgrid)

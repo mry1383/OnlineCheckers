@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grids : MonoBehaviour
 {
-    public bool isfull = false;
+    public string mode = "";
     public int index;
     void Start()
     {

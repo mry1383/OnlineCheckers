@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class Nut : MonoBehaviour
 {
       Mohre HeadCode;
-    public GameObject leftmove,rightmove;
-    //take side index position;
+      earthposition Grid_mode = new earthposition();
+    public GameObject leftmove,rightmove,leftattack , rightattack;
     private Grids _Side;
     public bool startmove = false;
     public Vector3 target = new Vector3(0f,0f,0f);
     public int mousenumber = 0 , index = 0,targetnumber;
-    float movespped = 5f;
+    public float movespped = 5f;
+    public string nutcolor;
    Move nutmove = new Move();
-   MohreFuntion targetFinder = new MohreFuntion();
-   public RectTransform  trans,rightpos,leftpos;
+   RectTransform  trans,rightpos,leftpos;
     void Start()
     {
       HeadCode = GameObject.Find("CheckersManagerUI").GetComponent<Mohre>();
@@ -24,61 +24,68 @@ public class Nut : MonoBehaviour
       leftpos = leftmove.GetComponent<RectTransform>();
      leftmove.SetActive(false);
      rightmove.SetActive(false);
+     leftattack.SetActive(false);
+     rightattack.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
          move(startmove);
-        if(Input.GetMouseButtonDown(0))
-        {
-           //mouseClick();
-        }
     }
 
-     public void nutclick()
-    {
-     
-     leftmove.SetActive(true);
-     rightmove.SetActive(true);
-    }
-    public void mouseClick()
-  {
-             mousenumber++;
-             if(mousenumber ==1)
-             {
-                     leftmove.SetActive(false);
-                     rightmove.SetActive(false);
-                     mousenumber=0;
-             }
-  }
-  void OnTriggerEnter2D(Collider2D other)
-  {
-    if(other.tag=="Grid")
-    {
-      _Side = other.gameObject.GetComponent<Grids>();
-      index = _Side.index;
-    }
-  }
+
+    // Ged placeNumber as full
+ // void OnTriggerEnter2D(Collider2D other)
+  //{
+   // if(other.tag=="Grid")
+    //{
+     // _Side = other.gameObject.GetComponent<Grids>();
+     // index = _Side.index;
+     // Grid_mode.MapGridEnabled(index,true);
+      
+   // }
+ // }
     void OnTriggerStay2D(Collider2D other)
   {
     if(other.tag=="Grid")
     {
       _Side = other.gameObject.GetComponent<Grids>();
       index = _Side.index;
+      _Side.mode = nutcolor;
+      Grid_mode.MapGridEnabled(index,true);
     }
   }
+  void OnTriggerExit2D(Collider2D other)
+  {
+    if(other.tag=="Grid")
+    {
+      _Side = other.gameObject.GetComponent<Grids>();
+      _Side.mode = "";
+    index = _Side.index;
+    Grid_mode.MapGridEnabled(index,false);
+    print(index + _Side.mode);
+    }
+
+  }
+
+
+  // for nuts move and hide choise nuts;
    public void move(bool start = false)
    {
-    if(start)
+    if(start==true)
     {
     RectTransform TargetRT = HeadCode.Nutposition[targetnumber].GetComponent<RectTransform>();
     nutmove.normalmove(trans,TargetRT,movespped);
-                         leftmove.SetActive(false);
-                     rightmove.SetActive(false);
+      leftmove.SetActive(false);
+      rightmove.SetActive(false);
+    if((trans.position.y<=TargetRT.position.y+2)&&(trans.position.y>=TargetRT.position.y-2))
+   {startmove = false;}
     }
-
-   }
+    else
+    {return;}
+    }
+    
 
 
 }
