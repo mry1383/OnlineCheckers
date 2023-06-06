@@ -5,12 +5,13 @@ using MohreFuntions;
 using UnityEngine.UI;
 public class Nutmove : MonoBehaviour
 {
+    public GameObject boss;
     public Nutsmovemanager.NutsTurn nm;
     earthposition erp = new earthposition();
     MohreFuntion funtion = new MohreFuntion();
    public int position_index , enumnumber = 0;
    public string Mode,Sidepos;
-   public bool Attack , go=false;
+   public bool Attack = false , go=false;
    public Nut head;
    private Grids _Side;
    Button click;
@@ -45,6 +46,10 @@ public class Nutmove : MonoBehaviour
     }
     public void Side()
     {
+        if(Attack==true)
+        {
+           boss.tag = "attack";
+        }
         bool Gridmode = erp.gridmode(head.index);
         if(go == true)
         {
@@ -55,6 +60,7 @@ int position = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
        head.move(true);
        Nutsmovemanager.Turn();
        print (Gridmode);
+       head.deactivemove();
         }
         else
         

@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 6618309626067254356}
   nm: 1
   position_index: 0
   enumnumber: 0
@@ -351,6 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 6618309626067254356}
   nm: 1
   position_index: 0
   enumnumber: 0
@@ -554,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 6618309626067254356}
   nm: 1
   position_index: 0
   enumnumber: 0
@@ -757,6 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 6618309626067254356}
   nm: 1
   position_index: 0
   enumnumber: 0
@@ -829,7 +833,7 @@ GameObject:
   - component: {fileID: 4035209876254734059}
   m_Layer: 5
   m_Name: RedNut
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -22,10 +22,7 @@ public class Nut : MonoBehaviour
       trans = GetComponent<RectTransform>();
       rightpos = rightmove.GetComponent<RectTransform>();
       leftpos = leftmove.GetComponent<RectTransform>();
-     leftmove.SetActive(false);
-     rightmove.SetActive(false);
-     leftattack.SetActive(false);
-     rightattack.SetActive(false);
+        deactivemove();
     }
 
     // Update is called once per frame
@@ -36,16 +33,15 @@ public class Nut : MonoBehaviour
 
 
     // Ged placeNumber as full
- // void OnTriggerEnter2D(Collider2D other)
-  //{
-   // if(other.tag=="Grid")
-    //{
-     // _Side = other.gameObject.GetComponent<Grids>();
-     // index = _Side.index;
-     // Grid_mode.MapGridEnabled(index,true);
-      
-   // }
- // }
+  void OnTriggerEnter2D(Collider2D other)
+  {
+    if(other.tag=="attack")
+    {
+      other.gameObject.tag="Player";
+        Destroy(gameObject);
+        
+    }
+  }
     void OnTriggerStay2D(Collider2D other)
   {
     if(other.tag=="Grid")
@@ -84,6 +80,13 @@ public class Nut : MonoBehaviour
     }
     else
     {return;}
+    }
+    public void deactivemove()
+    {
+      leftmove.SetActive(false);
+     rightmove.SetActive(false);
+     leftattack.SetActive(false);
+     rightattack.SetActive(false);
     }
     
 
