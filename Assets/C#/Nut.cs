@@ -37,6 +37,9 @@ public class Nut : MonoBehaviour
   {
     if(other.tag=="attack")
     {
+      GameObject map_panel = GameObject.Find("MapPanel");
+      Animator shake = map_panel.GetComponent<Animator>();
+      shake.SetTrigger("shake");
       other.gameObject.tag="Player";
         Destroy(gameObject);
         

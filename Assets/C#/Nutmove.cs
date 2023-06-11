@@ -5,6 +5,7 @@ using MohreFuntions;
 using UnityEngine.UI;
 public class Nutmove : MonoBehaviour
 {
+    public GameObject attackpoint;
     public GameObject boss;
     public Nutsmovemanager.NutsTurn nm;
     earthposition erp = new earthposition();
@@ -36,6 +37,10 @@ public class Nutmove : MonoBehaviour
             if(_Side.mode != "")
             {
             gameObject.SetActive(false);
+            if(Attack == false)
+            {
+                attackpoint.SetActive(true);
+            }
             }
             else
             {
@@ -49,8 +54,11 @@ public class Nutmove : MonoBehaviour
         if(Attack==true)
         {
            boss.tag = "attack";
+           head.movespped =20;
         }
+        else{   head.movespped =12;  }
         bool Gridmode = erp.gridmode(head.index);
+
         if(go == true)
         {
 int position = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
@@ -70,7 +78,7 @@ int position = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
     }
     public void Headclick ()
     {
-        if(go && Nutsmovemanager.nutTurn == nm)
+        if(go && Nutsmovemanager.nutTurn == nm && Attack == false)
         {
            gameObject.SetActive(true);
            
