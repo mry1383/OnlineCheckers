@@ -34,6 +34,7 @@ public class Nutmove : MonoBehaviour
         if(other.tag=="Grid")
         {
             _Side = other.gameObject.GetComponent<Grids>();
+            transform.position = _Side.transform.position;
             if(_Side.mode != "")
             {
             gameObject.SetActive(false);
