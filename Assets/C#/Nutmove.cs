@@ -49,6 +49,10 @@ public class Nutmove : MonoBehaviour
            
                 }
         }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
     public void Side()
     {

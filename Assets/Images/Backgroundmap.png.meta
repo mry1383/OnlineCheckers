@@ -288,10 +288,10 @@ TextureImporter:
       name: Backgroundmap_8
       rect:
         serializedVersion: 2
-        x: 144
-        y: 60
-        width: 56
-        height: 55
+        x: 149
+        y: 66
+        width: 46
+        height: 45
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
