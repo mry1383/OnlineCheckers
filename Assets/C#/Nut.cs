@@ -13,7 +13,7 @@ public class Nut : MonoBehaviour
     public Vector3 target = new Vector3(0f,0f,0f);
     public int mousenumber = 0 , index = 0,targetnumber;
     public float movespped = 5f;
-    public string nutcolor;
+    //private string nutcolor;
    Move nutmove = new Move();
    RectTransform  trans,rightpos,leftpos;
     void Start()
@@ -51,7 +51,8 @@ public class Nut : MonoBehaviour
     {
       _Side = other.gameObject.GetComponent<Grids>();
       index = _Side.index;
-      _Side.mode = nutcolor;
+      _Side.mode = gameObject.layer.ToString();
+      print(_Side.mode);
       Grid_mode.MapGridEnabled(index,true);
     }
   }

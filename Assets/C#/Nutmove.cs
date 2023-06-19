@@ -5,6 +5,7 @@ using MohreFuntions;
 using UnityEngine.UI;
 public class Nutmove : MonoBehaviour
 {
+   
     public GameObject attackpoint;
     public GameObject boss;
     public Nutsmovemanager.NutsTurn nm;
@@ -17,9 +18,10 @@ public class Nutmove : MonoBehaviour
    private Grids _Side;
    Button click;
    Image colorb;
+   public string targetcolor = "";
     void Start()
     {
-       
+        
         click = GetComponent<Button>();
         colorb = GetComponent<Image>();
     }
@@ -35,11 +37,13 @@ public class Nutmove : MonoBehaviour
         {
             _Side = other.gameObject.GetComponent<Grids>();
             transform.position = _Side.transform.position;
-            if(_Side.mode != "")
+           targetcolor =  _Side.gameObject.layer.ToString();
+            if(_Side.mode != targetcolor && _Side.mode !="")
             {
             gameObject.SetActive(false);
-            if(Attack == false)
+            if(Attack == false && _Side.mode != targetcolor)
             {
+                print("attack");
                 attackpoint.SetActive(true);
             }
             }
@@ -47,13 +51,14 @@ public class Nutmove : MonoBehaviour
             {
                 go = true;
            
-                }
+            }
         }
         else
         {
             gameObject.SetActive(false);
         }
     }
+    
     public void Side()
     {
         if(Attack==true)
@@ -83,10 +88,11 @@ int position = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
     }
     public void Headclick ()
     {
-        if(go && Nutsmovemanager.nutTurn == nm && Attack == false)
+        if(go && Nutsmovemanager.nutTurn == nm && Attack == false&&targetcolor != gameObject.layer.ToString())
         {
            gameObject.SetActive(true);
            
         }
+
     }
 }

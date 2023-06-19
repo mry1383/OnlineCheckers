@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3089476180001027617}
   - component: {fileID: 8356177850224781203}
   - component: {fileID: 8131745344484568970}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: TopBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 331870759403426775}
   - component: {fileID: 5941137172167024676}
   - component: {fileID: 608037148546506338}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: LeftAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,6 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nut_layer:
+    serializedVersion: 2
+    m_Bits: 128
   attackpoint: {fileID: 605955141999043820}
   boss: {fileID: 6618309626067254356}
   nm: 1
@@ -290,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4558675911940547994}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +342,7 @@ GameObject:
   - component: {fileID: 6222632669151418539}
   - component: {fileID: 6915705584814119999}
   - component: {fileID: 4969754693405248167}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,6 +475,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nut_layer:
+    serializedVersion: 2
+    m_Bits: 128
   attackpoint: {fileID: 6214881335074640444}
   boss: {fileID: 6618309626067254356}
   nm: 1
@@ -539,7 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8995871909848871944}
   - component: {fileID: 7413054986650415152}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: sprits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +608,7 @@ GameObject:
   - component: {fileID: 3120620059711126323}
   - component: {fileID: 4543020733949326215}
   - component: {fileID: 4648654640376393284}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: LeftBigBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +688,7 @@ GameObject:
   - component: {fileID: 895962397932431263}
   - component: {fileID: 4671392301063445802}
   - component: {fileID: 2795499120869446091}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,6 +821,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nut_layer:
+    serializedVersion: 2
+    m_Bits: 128
   attackpoint: {fileID: 605955141999043820}
   boss: {fileID: 6618309626067254356}
   nm: 1
@@ -883,7 +892,7 @@ GameObject:
   - component: {fileID: 2245254034550150125}
   - component: {fileID: 1898958448242881710}
   - component: {fileID: 2033726325562333056}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Right-Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +968,7 @@ GameObject:
   - component: {fileID: 5516369821560862694}
   - component: {fileID: 3512300720309887325}
   - component: {fileID: 6228581801799908810}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Left-Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1044,7 @@ GameObject:
   - component: {fileID: 654763986073047550}
   - component: {fileID: 440388947608842814}
   - component: {fileID: 1807653505134015540}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Right-Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,7 +1120,7 @@ GameObject:
   - component: {fileID: 7585714184613755871}
   - component: {fileID: 5727171960251867428}
   - component: {fileID: 1555842535177630308}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1187,7 +1196,7 @@ GameObject:
   - component: {fileID: 6179514783578547718}
   - component: {fileID: 4863572682622097563}
   - component: {fileID: 7143810836415838511}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Lines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1267,7 +1276,7 @@ GameObject:
   - component: {fileID: 5488915431649170622}
   - component: {fileID: 7883959938781866787}
   - component: {fileID: 4492361486967054249}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: RightAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1400,6 +1409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nut_layer:
+    serializedVersion: 2
+    m_Bits: 128
   attackpoint: {fileID: 6214881335074640444}
   boss: {fileID: 6618309626067254356}
   nm: 1
@@ -1471,7 +1483,7 @@ GameObject:
   - component: {fileID: 7766689920168591654}
   - component: {fileID: 8595058123251215853}
   - component: {fileID: 4035209876254734059}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: RedNut
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1625,7 +1637,6 @@ MonoBehaviour:
   index: 0
   targetnumber: 0
   movespped: 12
-  nutcolor: red
 --- !u!61 &8595058123251215853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1684,7 +1695,7 @@ GameObject:
   - component: {fileID: 3439424274897693797}
   - component: {fileID: 6575266723738527773}
   - component: {fileID: 1044341659263481946}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Top-Left-Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1760,7 +1771,7 @@ GameObject:
   - component: {fileID: 7705583826395367109}
   - component: {fileID: 7354341730683810205}
   - component: {fileID: 6456104795537631299}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: LeftBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1836,7 +1847,7 @@ GameObject:
   - component: {fileID: 1690554147597170962}
   - component: {fileID: 4617774867430502921}
   - component: {fileID: 453384035964110994}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: RightBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1912,7 +1923,7 @@ GameObject:
   - component: {fileID: 3249016355083051947}
   - component: {fileID: 7314977984628057033}
   - component: {fileID: 7105264361389320713}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Left-Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8170810811169143115}
   - component: {fileID: 1737195708211337283}
   - component: {fileID: 3467108031734149387}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: RightBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 5951917478104671754}
   - component: {fileID: 2752504888851792116}
   - component: {fileID: 8584584857514607849}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 9038548676722006941}
   - component: {fileID: 1364277107047514203}
   - component: {fileID: 8226880876936787514}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Top-Left-Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 4708923730682256351}
   - component: {fileID: 5231673972091179194}
   - component: {fileID: 4997909802220959979}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Left-Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 1761939424899053191}
   - component: {fileID: 2717006709832207043}
   - component: {fileID: 4670662465451247843}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: blueNut
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -503,7 +503,6 @@ MonoBehaviour:
   index: 0
   targetnumber: 0
   movespped: 12
-  nutcolor: blue
 --- !u!61 &2717006709832207043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -517,7 +516,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.4423456, y: -5.4952683}
+  m_Offset: {x: -2.4423456, y: -4.8}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -560,7 +559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6664497127579102793}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +608,7 @@ GameObject:
   - component: {fileID: 1386868427057849589}
   - component: {fileID: 4256543754541573655}
   - component: {fileID: 8549367172463459656}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Left Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,6 +741,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nut_layer:
+    serializedVersion: 2
+    m_Bits: 64
   attackpoint: {fileID: 1857725623690909085}
   boss: {fileID: 1081968285960073104}
   nm: 0
@@ -810,7 +812,7 @@ GameObject:
   - component: {fileID: 1167238742160567112}
   - component: {fileID: 3713577083704099537}
   - component: {fileID: 3344287631855006415}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: LeftBigBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -886,7 +888,7 @@ GameObject:
   - component: {fileID: 2730631640318052806}
   - component: {fileID: 8112703476159897567}
   - component: {fileID: 3226743336840317471}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Left-Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -962,7 +964,7 @@ GameObject:
   - component: {fileID: 4310709625095183639}
   - component: {fileID: 6454214593660169743}
   - component: {fileID: 3531372141015324690}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Lines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1038,7 +1040,7 @@ GameObject:
   - component: {fileID: 3161940948937179057}
   - component: {fileID: 8078403117361912986}
   - component: {fileID: 2505902863944775294}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Right-Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1118,7 +1120,7 @@ GameObject:
   - component: {fileID: 6491041402211273505}
   - component: {fileID: 5194168861988329046}
   - component: {fileID: 2207651142475400946}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Right Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1251,6 +1253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nut_layer:
+    serializedVersion: 2
+    m_Bits: 64
   attackpoint: {fileID: 5684551190430984037}
   boss: {fileID: 1081968285960073104}
   nm: 0
@@ -1323,7 +1328,7 @@ GameObject:
   - component: {fileID: 6133401593176478212}
   - component: {fileID: 8796308614862601381}
   - component: {fileID: 4330207839025280215}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1337,7 +1342,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5718501000638739005}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1347,7 +1352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80.1, y: 28.899996}
+  m_AnchoredPosition: {x: 80.09998, y: 28.900002}
   m_SizeDelta: {x: 78, y: 34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6082114078557014637
@@ -1456,6 +1461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nut_layer:
+    serializedVersion: 2
+    m_Bits: 64
   attackpoint: {fileID: 5684551190430984037}
   boss: {fileID: 1081968285960073104}
   nm: 0
@@ -1528,7 +1536,7 @@ GameObject:
   - component: {fileID: 396254099302514762}
   - component: {fileID: 2145856798043786422}
   - component: {fileID: 5570317456847565985}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1661,6 +1669,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nut_layer:
+    serializedVersion: 2
+    m_Bits: 64
   attackpoint: {fileID: 1857725623690909085}
   boss: {fileID: 1081968285960073104}
   nm: 0
@@ -1729,7 +1740,7 @@ GameObject:
   - component: {fileID: 675948142467416210}
   - component: {fileID: 6767720920525442089}
   - component: {fileID: 8980058702254855006}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: LeftBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1805,7 +1816,7 @@ GameObject:
   - component: {fileID: 1619482192604776039}
   - component: {fileID: 2072797572802631894}
   - component: {fileID: 5791934437682124218}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: TopBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1880,7 +1891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7061390176920793656}
   - component: {fileID: 6776309412319370214}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: sprits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1943,7 +1954,7 @@ GameObject:
   - component: {fileID: 4282345915123166544}
   - component: {fileID: 2969954677059316526}
   - component: {fileID: 4724058080633189575}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Right-Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
