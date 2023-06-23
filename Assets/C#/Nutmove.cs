@@ -6,22 +6,25 @@ using UnityEngine.UI;
 public class Nutmove : MonoBehaviour
 {
    Button btn;
-    public GameObject attackpoint;
+  public  Mohre Usercode;
+    public GameObject attackpoint ;
+    public string targetgobj = "";
     public GameObject boss;
     public Nutsmovemanager.NutsTurn nm;
     earthposition erp = new earthposition();
     MohreFuntion funtion = new MohreFuntion();
-   public int position_index , enumnumber = 0;
+   public int position_index , enumnumber = 0 ;
    public string Mode,Sidepos;
    public bool Attack = false , go=false;
    public Nut head;
    public Grids _Side;
    Button click;
    Image colorb;
-   public int targetcolor ;
+   public int targetcolor=0 ;
     void Start()
     {
-        
+         
+        Usercode = GameObject.Find("CheckersManagerUI").GetComponent<Mohre>();
         btn = GetComponent<Button>();
         click = GetComponent<Button>();
         colorb = GetComponent<Image>();
@@ -30,6 +33,7 @@ public class Nutmove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         
     }
      void OnTriggerEnter2D(Collider2D other)
@@ -38,8 +42,12 @@ public class Nutmove : MonoBehaviour
         {
             
             _Side = other.gameObject.GetComponent<Grids>();
+        if(_Side==null)
+        {
+            sideposition();
+        }
             showLayer();
-            sideposition(true);
+            
         }
         
     }
@@ -75,6 +83,7 @@ public class Nutmove : MonoBehaviour
     }
     public void Headclick ()
     {
+        sideposition();
         if(go && Nutsmovemanager.nutTurn == nm && Attack == false)
         {
            btn.enabled = true;
@@ -86,6 +95,7 @@ public class Nutmove : MonoBehaviour
     // for Get Layer Value Grid map
     private void showLayer()
     {
+
            print(_Side);
            print(_Side.gameObject.layer);
            targetcolor =  _Side.gameObject.layer;
@@ -112,8 +122,9 @@ public class Nutmove : MonoBehaviour
             }
 
     }
-    public void sideposition( bool Stay)
+    public void sideposition()
     {
-           transform.position =_Side.transform.position;
+             position_index = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
+             Usercode.getnamegrid(position_index,gameObject,_Side);      
     }
 }

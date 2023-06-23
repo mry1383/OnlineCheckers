@@ -49,6 +49,7 @@ public class Nut : MonoBehaviour
         Destroy(gameObject);
         
     }
+
   }
     void OnTriggerStay2D(Collider2D other)
   {
@@ -60,12 +61,10 @@ public class Nut : MonoBehaviour
       other.gameObject.layer = gameObject.layer;
       print(_Side.mode);
       Grid_mode.MapGridEnabled(index,true);
-     // btncode[0].sideposition(true);
-     // btncode[1].sideposition(true);
-     // btncode[2].sideposition(true);
-      //btncode[3].sideposition(true);
+
     }
   }
+
   void OnTriggerExit2D(Collider2D other)
   {
     if(other.tag=="Grid")
