@@ -5,7 +5,7 @@ using MohreFuntions;
 using UnityEngine.UI;
 public class Nutmove : MonoBehaviour
 {
-   
+   Button btn;
     public GameObject attackpoint;
     public GameObject boss;
     public Nutsmovemanager.NutsTurn nm;
@@ -15,13 +15,14 @@ public class Nutmove : MonoBehaviour
    public string Mode,Sidepos;
    public bool Attack = false , go=false;
    public Nut head;
-   private Grids _Side;
+   public Grids _Side;
    Button click;
    Image colorb;
-   public string targetcolor = "";
+   public int targetcolor ;
     void Start()
     {
         
+        btn = GetComponent<Button>();
         click = GetComponent<Button>();
         colorb = GetComponent<Image>();
     }
@@ -35,28 +36,17 @@ public class Nutmove : MonoBehaviour
     {
         if(other.tag=="Grid")
         {
+            
             _Side = other.gameObject.GetComponent<Grids>();
-            transform.position = _Side.transform.position;
-           targetcolor =  _Side.gameObject.layer.ToString();
-            if(_Side.mode != targetcolor && _Side.mode !="")
-            {
-            gameObject.SetActive(false);
-            if(Attack == false && _Side.mode != targetcolor)
-            {
-                print("attack");
-                attackpoint.SetActive(true);
-            }
-            }
-            else
-            {
-                go = true;
-           
-            }
+            showLayer();
+            sideposition(true);
         }
-        else
-        {
-            gameObject.SetActive(false);
-        }
+        
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+         
+        
     }
     
     public void Side()
@@ -71,7 +61,7 @@ public class Nutmove : MonoBehaviour
 
         if(go == true)
         {
-int position = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
+       int position = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
        print(position);
        head.targetnumber = position;
        head.startmove=true;
@@ -79,20 +69,51 @@ int position = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
        Nutsmovemanager.Turn();
        print (Gridmode);
        head.deactivemove();
-        }
-        else
         
-         {}
-       
-
+        }
+        else{}
     }
     public void Headclick ()
     {
-        if(go && Nutsmovemanager.nutTurn == nm && Attack == false&&targetcolor != gameObject.layer.ToString())
+        if(go && Nutsmovemanager.nutTurn == nm && Attack == false)
         {
-           gameObject.SetActive(true);
-           
+           btn.enabled = true;
+           colorb.enabled = true;
+           showLayer();
         }
 
+    }
+    // for Get Layer Value Grid map
+    private void showLayer()
+    {
+           print(_Side);
+           print(_Side.gameObject.layer);
+           targetcolor =  _Side.gameObject.layer;
+            if(gameObject.layer != targetcolor && targetcolor !=5)
+            {
+            
+            if(Attack == false)
+            {
+                print("attack");
+                attackpoint.SetActive(true);
+                colorb.enabled = false;
+                btn.enabled = false;
+            }
+            _Side = null;
+            }
+            else if (gameObject.layer == targetcolor)
+            {
+                btn.enabled = false;
+                colorb.enabled = false;
+            }
+            else
+            {
+                go = true;
+            }
+
+    }
+    public void sideposition( bool Stay)
+    {
+           transform.position =_Side.transform.position;
     }
 }

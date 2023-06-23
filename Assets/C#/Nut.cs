@@ -13,16 +13,21 @@ public class Nut : MonoBehaviour
     public Vector3 target = new Vector3(0f,0f,0f);
     public int mousenumber = 0 , index = 0,targetnumber;
     public float movespped = 5f;
-    //private string nutcolor;
+    //choises
+   Button []btn = new Button [4];
+   Image []img = new Image [4];
    Move nutmove = new Move();
    RectTransform  trans,rightpos,leftpos;
+   Nutmove [] btncode = new Nutmove [4];
     void Start()
     {
       HeadCode = GameObject.Find("CheckersManagerUI").GetComponent<Mohre>();
       trans = GetComponent<RectTransform>();
       rightpos = rightmove.GetComponent<RectTransform>();
       leftpos = leftmove.GetComponent<RectTransform>();
+        startchoise();
         deactivemove();
+
     }
 
     // Update is called once per frame
@@ -52,14 +57,20 @@ public class Nut : MonoBehaviour
       _Side = other.gameObject.GetComponent<Grids>();
       index = _Side.index;
       _Side.mode = gameObject.layer.ToString();
+      other.gameObject.layer = gameObject.layer;
       print(_Side.mode);
       Grid_mode.MapGridEnabled(index,true);
+     // btncode[0].sideposition(true);
+     // btncode[1].sideposition(true);
+     // btncode[2].sideposition(true);
+      //btncode[3].sideposition(true);
     }
   }
   void OnTriggerExit2D(Collider2D other)
   {
     if(other.tag=="Grid")
     {
+      other.gameObject.layer = 5;
       _Side = other.gameObject.GetComponent<Grids>();
       _Side.mode = "";
     index = _Side.index;
@@ -77,8 +88,8 @@ public class Nut : MonoBehaviour
     {
     RectTransform TargetRT = HeadCode.Nutposition[targetnumber].GetComponent<RectTransform>();
     nutmove.normalmove(trans,TargetRT,movespped);
-      leftmove.SetActive(false);
-      rightmove.SetActive(false);
+     btn[0].enabled = btn[1].enabled =false;
+     img[0].enabled = img[1].enabled =false;
     if((trans.position.y<=TargetRT.position.y+2)&&(trans.position.y>=TargetRT.position.y-2))
    {startmove = false;}
     }
@@ -87,10 +98,23 @@ public class Nut : MonoBehaviour
     }
     public void deactivemove()
     {
-      leftmove.SetActive(false);
-     rightmove.SetActive(false);
-     leftattack.SetActive(false);
-     rightattack.SetActive(false);
+     btn[0].enabled = btn[1].enabled = btn[2].enabled = btn[3].enabled = false;
+     img[0].enabled = img[1].enabled = img[2].enabled = img[3].enabled = false;
+    }
+    public void startchoise()
+    {
+     btn[0]= leftmove.GetComponent<Button>();
+     btn[1]= rightmove.GetComponent<Button>();
+     btn[2]= leftattack.GetComponent<Button>();
+     btn[3]= rightattack.GetComponent<Button>();
+     img[0]= leftmove.GetComponent<Image>();
+     img[1]= rightmove.GetComponent<Image>();
+     img[2]= leftattack.GetComponent<Image>();
+     img[3]= rightattack.GetComponent<Image>();
+     btncode[0]= leftmove.GetComponent<Nutmove>();
+     btncode[1]= rightmove.GetComponent<Nutmove>();
+     btncode[2]= leftattack.GetComponent<Nutmove>();
+     btncode[3]= rightattack.GetComponent<Nutmove>();
     }
     
 
