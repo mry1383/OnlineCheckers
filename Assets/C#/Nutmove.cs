@@ -17,7 +17,7 @@ public class Nutmove : MonoBehaviour
    public string Mode,Sidepos;
    public bool Attack = false , go=false;
    public Nut head;
-   public Grids _Side;
+   public Grids _Side = null;
    Button click;
    Image colorb;
    public int targetcolor=0 ;
@@ -39,13 +39,13 @@ public class Nutmove : MonoBehaviour
      void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag=="Grid")
-        {
-            
+        {  
             _Side = other.gameObject.GetComponent<Grids>();
         if(_Side==null)
         {
-            sideposition();
+             sideposition();   
         }
+       
             showLayer();
             
         }
@@ -54,7 +54,7 @@ public class Nutmove : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
          
-        
+        //sideposition();
     }
     
     public void Side()
@@ -72,6 +72,7 @@ public class Nutmove : MonoBehaviour
        int position = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
        print(position);
        head.targetnumber = position;
+       head.index = position_index;
        head.startmove=true;
        head.move(true);
        Nutsmovemanager.Turn();
@@ -84,11 +85,21 @@ public class Nutmove : MonoBehaviour
     public void Headclick ()
     {
         sideposition();
+        
         if(go && Nutsmovemanager.nutTurn == nm && Attack == false)
         {
            btn.enabled = true;
            colorb.enabled = true;
            showLayer();
+        }
+        else if(Attack == true && _Side != null)
+        {
+            targetcolor =  _Side.gameObject.layer;
+            if(targetcolor != 5)
+            {
+              colorb.enabled = false;
+              btn.enabled = false;
+            }
         }
 
     }
@@ -99,19 +110,14 @@ public class Nutmove : MonoBehaviour
            print(_Side);
            print(_Side.gameObject.layer);
            targetcolor =  _Side.gameObject.layer;
-            if(gameObject.layer != targetcolor && targetcolor !=5)
+           //enemy on the grid
+            if(head.gameObject.layer != targetcolor && targetcolor !=5)
             {
-            
-            if(Attack == false)
-            {
-                print("attack");
-                attackpoint.SetActive(true);
-                colorb.enabled = false;
-                btn.enabled = false;
+                
+                attackmode();
+           // _Side = null;
             }
-            _Side = null;
-            }
-            else if (gameObject.layer == targetcolor)
+            else if (head.gameObject.layer == targetcolor)
             {
                 btn.enabled = false;
                 colorb.enabled = false;
@@ -125,6 +131,28 @@ public class Nutmove : MonoBehaviour
     public void sideposition()
     {
              position_index = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
-             Usercode.getnamegrid(position_index,gameObject,_Side);      
+             Usercode.getnamegrid(position_index,gameObject,_Side);
+              print(_Side);     
+    }
+    public void attackmode()
+    {
+        print("attack");
+         attackpoint.SetActive(true);
+          colorb.enabled = false;
+       btn.enabled = false;
+       Nutmove attackmove = attackpoint.GetComponent<Nutmove>();
+       attackmove.position_index  = funtion.NutsMoveposition(head.index,Mode,true,Sidepos);
+       if(attackmove.targetcolor ==5)
+       { 
+       attackmove.btn.enabled = true;
+       attackmove.colorb.enabled = true;
+
+       }
+       else
+       {
+        attackmove.btn.enabled = false;
+       attackmove.colorb.enabled = false;
+       }
+
     }
 }

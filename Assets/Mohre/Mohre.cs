@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using MohreFuntions;
 public class Mohre : MonoBehaviour
 {
-     
+      public Grids gg = new Grids();
      public GameObject [] Nutposition = new GameObject[65];
      public GameObject BlueNut,RedNut;
      public int nutnumber =0;
@@ -20,7 +20,7 @@ public class Mohre : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
     public void getnamegrid(int index ,GameObject trageted,Grids _side)
     {
@@ -38,10 +38,12 @@ public class Mohre : MonoBehaviour
             GameObject geted =GameObject.Find(F);
              trageted.transform.position = geted.transform.position;
              _side = g;
+             
              print("Grid :"+ g.index);
            }
            else{
             //print("G:"+F+"index:"+g.index);
+            
             }
             nutnumber++; 
          }

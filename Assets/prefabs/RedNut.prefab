@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 331870759403426775}
   - component: {fileID: 5941137172167024676}
   - component: {fileID: 608037148546506338}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: LeftAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -145, y: -126.8}
+  m_AnchoredPosition: {x: -145, y: -119.4}
   m_SizeDelta: {x: 78, y: 34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2956395346576892911
@@ -224,10 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nut_layer:
-    serializedVersion: 2
-    m_Bits: 128
+  Usercode: {fileID: 0}
   attackpoint: {fileID: 605955141999043820}
+  targetgobj: 
   boss: {fileID: 6618309626067254356}
   nm: 1
   position_index: 0
@@ -237,6 +236,8 @@ MonoBehaviour:
   Attack: 1
   go: 0
   head: {fileID: 7766689920168591654}
+  _Side: {fileID: 0}
+  targetcolor: 0
 --- !u!61 &5941137172167024676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -342,7 +343,7 @@ GameObject:
   - component: {fileID: 6222632669151418539}
   - component: {fileID: 6915705584814119999}
   - component: {fileID: 4969754693405248167}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,10 +476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nut_layer:
-    serializedVersion: 2
-    m_Bits: 128
+  Usercode: {fileID: 0}
   attackpoint: {fileID: 6214881335074640444}
+  targetgobj: 
   boss: {fileID: 6618309626067254356}
   nm: 1
   position_index: 0
@@ -488,6 +488,8 @@ MonoBehaviour:
   Attack: 0
   go: 0
   head: {fileID: 7766689920168591654}
+  _Side: {fileID: 0}
+  targetcolor: 0
 --- !u!61 &6915705584814119999
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -688,7 +690,7 @@ GameObject:
   - component: {fileID: 895962397932431263}
   - component: {fileID: 4671392301063445802}
   - component: {fileID: 2795499120869446091}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,10 +823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nut_layer:
-    serializedVersion: 2
-    m_Bits: 128
+  Usercode: {fileID: 0}
   attackpoint: {fileID: 605955141999043820}
+  targetgobj: 
   boss: {fileID: 6618309626067254356}
   nm: 1
   position_index: 0
@@ -834,6 +835,8 @@ MonoBehaviour:
   Attack: 0
   go: 0
   head: {fileID: 7766689920168591654}
+  _Side: {fileID: 0}
+  targetcolor: 0
 --- !u!61 &4671392301063445802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1276,7 +1279,7 @@ GameObject:
   - component: {fileID: 5488915431649170622}
   - component: {fileID: 7883959938781866787}
   - component: {fileID: 4492361486967054249}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: RightAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1300,7 +1303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134, y: -127}
+  m_AnchoredPosition: {x: 134, y: -119.600006}
   m_SizeDelta: {x: 78, y: 34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5713508981097826370
@@ -1409,10 +1412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9261c9573aab284193a86b08d1698b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nut_layer:
-    serializedVersion: 2
-    m_Bits: 128
+  Usercode: {fileID: 0}
   attackpoint: {fileID: 6214881335074640444}
+  targetgobj: 
   boss: {fileID: 6618309626067254356}
   nm: 1
   position_index: 0
@@ -1422,6 +1424,8 @@ MonoBehaviour:
   Attack: 1
   go: 0
   head: {fileID: 7766689920168591654}
+  _Side: {fileID: 0}
+  targetcolor: 0
 --- !u!61 &7883959938781866787
 BoxCollider2D:
   m_ObjectHideFlags: 0

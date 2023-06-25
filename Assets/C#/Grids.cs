@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Grids : MonoBehaviour
 {
-    public string mode = "";
+    public int mode ;
     public int index;
     void Start()
     {
-        
+        mode = gameObject.layer;
     }
       
 

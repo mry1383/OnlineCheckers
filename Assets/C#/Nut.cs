@@ -57,7 +57,7 @@ public class Nut : MonoBehaviour
     {
       _Side = other.gameObject.GetComponent<Grids>();
       index = _Side.index;
-      _Side.mode = gameObject.layer.ToString();
+      _Side.mode = gameObject.layer;
       other.gameObject.layer = gameObject.layer;
       print(_Side.mode);
       Grid_mode.MapGridEnabled(index,true);
@@ -71,7 +71,7 @@ public class Nut : MonoBehaviour
     {
       other.gameObject.layer = 5;
       _Side = other.gameObject.GetComponent<Grids>();
-      _Side.mode = "";
+      _Side.mode = 5;
     index = _Side.index;
     Grid_mode.MapGridEnabled(index,false);
     print(index + _Side.mode);
@@ -85,6 +85,7 @@ public class Nut : MonoBehaviour
    {
     if(start==true)
     {
+      Playermove();
     RectTransform TargetRT = HeadCode.Nutposition[targetnumber].GetComponent<RectTransform>();
     nutmove.normalmove(trans,TargetRT,movespped);
      btn[0].enabled = btn[1].enabled =false;
@@ -115,7 +116,11 @@ public class Nut : MonoBehaviour
      btncode[2]= leftattack.GetComponent<Nutmove>();
      btncode[3]= rightattack.GetComponent<Nutmove>();
     }
-    
+    public void Playermove()
+    {
+      btn[0].enabled = btn[1].enabled = btn[2].enabled = btn[3].enabled = false;
+      img[0].enabled = img[1].enabled = img[2].enabled = img[3].enabled = false;
+    }
 
 
 }
