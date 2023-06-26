@@ -132,6 +132,7 @@ public class Nutmove : MonoBehaviour
     {
              position_index = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
              Usercode.getnamegrid(position_index,gameObject,_Side);
+            _Side= Usercode.gg;
               print(_Side);     
     }
     public void attackmode()

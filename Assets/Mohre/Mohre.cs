@@ -37,7 +37,7 @@ public class Mohre : MonoBehaviour
            {
             GameObject geted =GameObject.Find(F);
              trageted.transform.position = geted.transform.position;
-             _side = g;
+             gg = g;
              
              print("Grid :"+ g.index);
            }
