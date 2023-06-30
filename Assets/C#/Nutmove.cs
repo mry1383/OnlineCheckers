@@ -85,36 +85,40 @@ public class Nutmove : MonoBehaviour
     public void Headclick ()
     {
         sideposition();
-        
+         targetcolor =  _Side.gameObject.layer;
         if(go && Nutsmovemanager.nutTurn == nm && Attack == false)
         {
            btn.enabled = true;
            colorb.enabled = true;
            showLayer();
+           
         }
-        else if(Attack == true && _Side != null)
-        {
-            targetcolor =  _Side.gameObject.layer;
-            if(targetcolor != 5)
-            {
-              colorb.enabled = false;
-              btn.enabled = false;
-            }
-        }
+      //  else if(Attack == true )
+    //    {
+            
+            
+         //   if(targetcolor != 5)
+         //  {
+          //    colorb.enabled = false;
+          //    btn.enabled = false;
+          // }
+           
+      //  }
 
     }
     // for Get Layer Value Grid map
     private void showLayer()
     {
 
-           print(_Side);
-           print(_Side.gameObject.layer);
+          // print(_Side);
+         // print(_Side.gameObject.layer);
            targetcolor =  _Side.gameObject.layer;
            //enemy on the grid
             if(head.gameObject.layer != targetcolor && targetcolor !=5)
             {
                 
                 attackmode();
+                
            // _Side = null;
             }
             else if (head.gameObject.layer == targetcolor)
@@ -128,6 +132,7 @@ public class Nutmove : MonoBehaviour
             }
 
     }
+    ////////////////////////////////
     public void sideposition()
     {
              position_index = funtion.NutsMoveposition(head.index,Mode,Attack,Sidepos);
@@ -140,7 +145,7 @@ public class Nutmove : MonoBehaviour
         print("attack");
          attackpoint.SetActive(true);
           colorb.enabled = false;
-       btn.enabled = false;
+          btn.enabled = false;
        Nutmove attackmove = attackpoint.GetComponent<Nutmove>();
        attackmove.position_index  = funtion.NutsMoveposition(head.index,Mode,true,Sidepos);
        if(attackmove.targetcolor ==5)

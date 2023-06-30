@@ -109,6 +109,6 @@ public class Mohre : MonoBehaviour
     {
             Earth.MapGridEnabled(num,true);
             bool mode = Earth.gridmode(num);
-           Debug.Log(mode);
+         //  Debug.Log(mode);
     }
 }

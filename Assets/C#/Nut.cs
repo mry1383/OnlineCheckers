@@ -5,6 +5,12 @@ using MohreFuntions;
 using UnityEngine.UI;
 public class Nut : MonoBehaviour
 {
+  private AudioSource soundplayer;
+  public AudioClip die,moved;
+   public Animator anim;
+  public GameObject die_effect;
+    public string uitag ;
+     uiplayer healthdamaged;
       Mohre HeadCode;
       earthposition Grid_mode = new earthposition();
     public GameObject leftmove,rightmove,leftattack , rightattack;
@@ -21,6 +27,10 @@ public class Nut : MonoBehaviour
    Nutmove [] btncode = new Nutmove [4];
     void Start()
     {
+      soundplayer = GetComponent<AudioSource>();
+      die_effect.SetActive(false);
+      healthdamaged = GameObject.FindGameObjectWithTag(uitag).GetComponent<uiplayer>();
+      print((gameObject.name+"(Clone)UI"));
       HeadCode = GameObject.Find("CheckersManagerUI").GetComponent<Mohre>();
       trans = GetComponent<RectTransform>();
       rightpos = rightmove.GetComponent<RectTransform>();
@@ -42,11 +52,15 @@ public class Nut : MonoBehaviour
   {
     if(other.tag=="attack")
     {
+      soundplayer.PlayOneShot(die);
+      anim.SetBool("die",true);
+      die_effect.SetActive(true);
+      healthdamaged.Damage();
       GameObject map_panel = GameObject.Find("MapPanel");
       Animator shake = map_panel.GetComponent<Animator>();
       shake.SetTrigger("shake");
       other.gameObject.tag="Player";
-        Destroy(gameObject);
+        Destroy(gameObject,0.25f);
         
     }
 
@@ -69,6 +83,7 @@ public class Nut : MonoBehaviour
   {
     if(other.tag=="Grid")
     {
+      soundplayer.PlayOneShot(moved);
       other.gameObject.layer = 5;
       _Side = other.gameObject.GetComponent<Grids>();
       _Side.mode = 5;
