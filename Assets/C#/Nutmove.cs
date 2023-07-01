@@ -93,17 +93,6 @@ public class Nutmove : MonoBehaviour
            showLayer();
            
         }
-      //  else if(Attack == true )
-    //    {
-            
-            
-         //   if(targetcolor != 5)
-         //  {
-          //    colorb.enabled = false;
-          //    btn.enabled = false;
-          // }
-           
-      //  }
 
     }
     // for Get Layer Value Grid map
@@ -142,6 +131,7 @@ public class Nutmove : MonoBehaviour
     }
     public void attackmode()
     {
+        
         print("attack");
          attackpoint.SetActive(true);
           colorb.enabled = false;

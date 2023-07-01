@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using MohreFuntions;
 using UnityEngine.UI;
+
 public class Nut : MonoBehaviour
 {
+   Nutsmovemanager.NutsTurn nm;
   private AudioSource soundplayer;
   public AudioClip die,moved;
    public Animator anim;
@@ -27,6 +29,7 @@ public class Nut : MonoBehaviour
    Nutmove [] btncode = new Nutmove [4];
     void Start()
     {
+      
       soundplayer = GetComponent<AudioSource>();
       die_effect.SetActive(false);
       healthdamaged = GameObject.FindGameObjectWithTag(uitag).GetComponent<uiplayer>();
@@ -52,6 +55,7 @@ public class Nut : MonoBehaviour
   {
     if(other.tag=="attack")
     {
+      Nutsmovemanager.Turn();
       soundplayer.PlayOneShot(die);
       anim.SetBool("die",true);
       die_effect.SetActive(true);
