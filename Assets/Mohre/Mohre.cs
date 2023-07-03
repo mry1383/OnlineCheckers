@@ -83,7 +83,7 @@ public class Mohre : MonoBehaviour
          }
         GameObject bNut = Instantiate(BlueNut,Nutposition[i].transform.position,transform.rotation);
         bNut.transform.SetParent(transform.Find("Nuts"));
-        enabled(i);
+        enabledd(i);
       }
       //Red Nut
       for(int i=41;i<64;i+=2)
@@ -100,15 +100,15 @@ public class Mohre : MonoBehaviour
          }
       GameObject rNut= Instantiate(RedNut,Nutposition[i].transform.position,transform.rotation);
        rNut.transform.SetParent(transform.Find("Nuts"));
-       enabled(i);
+       enabledd(i);
       }
 
     }
     //look grid
-    public void enabled(int num)
+    public void enabledd(int num)
     {
-            Earth.MapGridEnabled(num,true);
+            Earth.MapGridEnabled(num, true);
             bool mode = Earth.gridmode(num);
-         //  Debug.Log(mode);
+        
     }
 }
