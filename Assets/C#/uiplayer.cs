@@ -34,8 +34,8 @@ public class uiplayer : MonoBehaviour
     public void  Damage()
     {
          
-       health.fillAmount -= 0.12f;
-       fullhealth-=12;
+       health.fillAmount -= 0.14f;
+       fullhealth-=14;
         haelthvalue.text = fullhealth.ToString()+"%";
         if(fullhealth<=0)
         {

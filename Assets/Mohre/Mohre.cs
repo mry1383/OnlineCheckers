@@ -111,4 +111,5 @@ public class Mohre : MonoBehaviour
             bool mode = Earth.gridmode(num);
         
     }
+     
 }

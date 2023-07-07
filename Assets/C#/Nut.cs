@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Nut : MonoBehaviour
 {
    Nutsmovemanager.NutsTurn nm;
+  public Nutsmovemanager manager;
   private AudioSource soundplayer;
   public AudioClip die,moved;
    public Animator anim;
@@ -29,7 +30,7 @@ public class Nut : MonoBehaviour
    Nutmove [] btncode = new Nutmove [4];
     void Start()
     {
-      
+      manager  =GameObject.Find("CheckersManagerUI").GetComponent<Nutsmovemanager>();
       soundplayer = GetComponent<AudioSource>();
       die_effect.SetActive(false);
       healthdamaged = GameObject.FindGameObjectWithTag(uitag).GetComponent<uiplayer>();
@@ -44,9 +45,16 @@ public class Nut : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
          move(startmove);
+        if(index!=manager.activeNut)
+        {
+            btn[0].enabled=btn[1].enabled=btn[2].enabled=btn[3].enabled=false;
+            img[0].enabled=img[1].enabled=img[2].enabled=img[3].enabled=false;
+            btncode[0].enabled=btncode[1].enabled=btncode[2].enabled=btncode[3].enabled=false;
+            
+        }
     }
 
 
@@ -140,6 +148,9 @@ public class Nut : MonoBehaviour
       btn[0].enabled = btn[1].enabled = btn[2].enabled = btn[3].enabled = false;
       img[0].enabled = img[1].enabled = img[2].enabled = img[3].enabled = false;
     }
-
+   public void choise()
+   {
+    manager.nutschoise(index);
+   }
 
 }

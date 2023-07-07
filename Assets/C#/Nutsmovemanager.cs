@@ -34,6 +34,11 @@ public class Nutsmovemanager : MonoBehaviour
         red.enabled = false;
         }
     }
+    public int activeNut;
+    public void nutschoise (int index)
+    {
+     activeNut = index;
+    }
     // Update is called once per frame
     void Update()
     {

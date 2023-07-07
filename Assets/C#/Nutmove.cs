@@ -34,7 +34,7 @@ public class Nutmove : MonoBehaviour
     void Update()
     {
        
-        
+
     }
      void OnTriggerEnter2D(Collider2D other)
     {
@@ -93,6 +93,8 @@ public class Nutmove : MonoBehaviour
            showLayer();
            
         }
+        
+
 
     }
     // for Get Layer Value Grid map
