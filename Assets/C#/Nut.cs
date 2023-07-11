@@ -151,6 +151,16 @@ public class Nut : MonoBehaviour
    public void choise()
    {
     manager.nutschoise(index);
+         if(index%8==0)
+    {
+      btn[0].enabled = false;
+      img[0].enabled = false;
+    }
+    if((index+1)%8==0)
+    {
+      btn[1].enabled = false;
+      img[1].enabled = false;
+    }
    }
 
 }
