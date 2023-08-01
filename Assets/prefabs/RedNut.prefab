@@ -212,6 +212,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 331870759403426775}
+        m_TargetAssemblyTypeName: Nutmove, Assembly-CSharp
+        m_MethodName: Attacked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &331870759403426775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,13 +243,13 @@ MonoBehaviour:
   nm: 1
   position_index: 0
   enumnumber: 0
+  targetcolor: 0
   Mode: down
   Sidepos: left
   Attack: 1
   go: 0
   head: {fileID: 7766689920168591654}
   _Side: {fileID: 0}
-  targetcolor: 0
 --- !u!61 &5941137172167024676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -508,13 +520,13 @@ MonoBehaviour:
   nm: 1
   position_index: 0
   enumnumber: 0
+  targetcolor: 0
   Mode: down
   Sidepos: right
   Attack: 0
   go: 0
   head: {fileID: 7766689920168591654}
   _Side: {fileID: 0}
-  targetcolor: 0
 --- !u!61 &6915705584814119999
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -881,13 +893,13 @@ MonoBehaviour:
   nm: 1
   position_index: 0
   enumnumber: 0
+  targetcolor: 0
   Mode: down
   Sidepos: left
   Attack: 0
   go: 0
   head: {fileID: 7766689920168591654}
   _Side: {fileID: 0}
-  targetcolor: 0
 --- !u!61 &4671392301063445802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1507,6 +1519,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5488915431649170622}
+        m_TargetAssemblyTypeName: Nutmove, Assembly-CSharp
+        m_MethodName: Attacked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5488915431649170622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1526,13 +1550,13 @@ MonoBehaviour:
   nm: 1
   position_index: 0
   enumnumber: 0
+  targetcolor: 0
   Mode: down
   Sidepos: right
   Attack: 1
   go: 0
   head: {fileID: 7766689920168591654}
   _Side: {fileID: 0}
-  targetcolor: 0
 --- !u!61 &7883959938781866787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1620,6 +1644,7 @@ GameObject:
   - component: {fileID: 8595058123251215853}
   - component: {fileID: 4035209876254734059}
   - component: {fileID: 5945270523289244956}
+  - component: {fileID: 2382643083685709107}
   m_Layer: 7
   m_Name: RedNut
   m_TagString: Player
@@ -1789,6 +1814,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6222632669151418539}
+        m_TargetAssemblyTypeName: Nutmove, Assembly-CSharp
+        m_MethodName: Headclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 895962397932431263}
+        m_TargetAssemblyTypeName: Nutmove, Assembly-CSharp
+        m_MethodName: Headclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7766689920168591654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1816,7 +1865,7 @@ MonoBehaviour:
   mousenumber: 0
   index: 0
   targetnumber: 0
-  movespped: 12
+  movespped: 9
 --- !u!61 &8595058123251215853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1849,7 +1898,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7480564, y: -3.9862359}
+  m_Offset: {x: -1.7878017, y: -7.6139574}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1860,7 +1909,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 44.42831, y: 21.695492}
+  m_Size: {x: 39.021603, y: 14.440062}
   m_EdgeRadius: 0
 --- !u!50 &4035209876254734059
 Rigidbody2D:
@@ -1985,6 +2034,51 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &2382643083685709107
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618309626067254356}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.9777389, y: -7.746648}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 26.315338, y: 11.349604}
+  m_EdgeRadius: 0
 --- !u!1 &6816077693478906098
 GameObject:
   m_ObjectHideFlags: 0

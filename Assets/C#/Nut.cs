@@ -63,7 +63,7 @@ public class Nut : MonoBehaviour
   {
     if(other.tag=="attack")
     {
-      Nutsmovemanager.Turn();
+          Nutsmovemanager.Turn();
       soundplayer.PlayOneShot(die);
       anim.SetBool("die",true);
       die_effect.SetActive(true);
@@ -77,10 +77,24 @@ public class Nut : MonoBehaviour
     }
 
   }
+  public void Die()
+  {
+          Nutsmovemanager.Turn();
+      soundplayer.PlayOneShot(die);
+      anim.SetBool("die",true);
+      die_effect.SetActive(true);
+      healthdamaged.Damage();
+      GameObject map_panel = GameObject.Find("MapPanel");
+      Animator shake = map_panel.GetComponent<Animator>();
+      shake.SetTrigger("shake");
+      //other.gameObject.tag="Player";
+        Destroy(gameObject,0.25f);
+  }
     void OnTriggerStay2D(Collider2D other)
   {
     if(other.tag=="Grid")
     {
+      
       _Side = other.gameObject.GetComponent<Grids>();
       index = _Side.index;
       _Side.mode = gameObject.layer;

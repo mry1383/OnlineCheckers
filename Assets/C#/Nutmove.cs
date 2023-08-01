@@ -5,22 +5,25 @@ using MohreFuntions;
 using UnityEngine.UI;
 public class Nutmove : MonoBehaviour
 {
-   Button btn;
-  public  Mohre Usercode;
+    Nutmove attackmove;
+    Nut Enemykiller;
+    public  Mohre Usercode;
     public GameObject attackpoint ;
     public string targetgobj = "";
     public GameObject boss;
     public Nutsmovemanager.NutsTurn nm;
-    earthposition erp = new earthposition();
-    MohreFuntion funtion = new MohreFuntion();
-   public int position_index , enumnumber = 0 ;
+    public int position_index , enumnumber = 0 ;
+    public int targetcolor=0 ;
    public string Mode,Sidepos;
    public bool Attack = false , go=false;
    public Nut head;
    public Grids _Side = null;
+    Button btn;
+    earthposition erp = new earthposition();
+    MohreFuntion funtion = new MohreFuntion();
    Button click;
    Image colorb;
-   public int targetcolor=0 ;
+   
     void Start()
     {
          
@@ -28,12 +31,13 @@ public class Nutmove : MonoBehaviour
         btn = GetComponent<Button>();
         click = GetComponent<Button>();
         colorb = GetComponent<Image>();
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-       
+
 
     }
      void OnTriggerEnter2D(Collider2D other)
@@ -49,6 +53,10 @@ public class Nutmove : MonoBehaviour
             showLayer();
             
         }
+        else
+        {
+            Enemykiller = other.GetComponent<Nut>();
+        }
         
     }
     void OnTriggerExit2D(Collider2D other)
@@ -59,6 +67,7 @@ public class Nutmove : MonoBehaviour
     
     public void Side()
     {
+        head.startmove = true;
         if(Attack==true)
         {
            boss.tag = "attack";
@@ -91,6 +100,8 @@ public class Nutmove : MonoBehaviour
            btn.enabled = true;
            colorb.enabled = true;
            showLayer();
+             attackmove = attackpoint.GetComponent<Nutmove>();
+             attackmove.Enemykiller = this.Enemykiller;
            
         }
         
@@ -132,14 +143,20 @@ public class Nutmove : MonoBehaviour
             _Side= Usercode.gg;
               print(_Side);
     }
+    public void Attacked()
+    {
+            Enemykiller.Die();
+           boss.tag = "Player";
+    }
     public void attackmode()
     {
-        
+          attackmove = attackpoint.GetComponent<Nutmove>();
         print("attack");
-         attackpoint.SetActive(true);
+
+         
           colorb.enabled = false;
           btn.enabled = false;
-       Nutmove attackmove = attackpoint.GetComponent<Nutmove>();
+      
        attackmove.position_index  = funtion.NutsMoveposition(head.index,Mode,true,Sidepos);
        if(attackmove.targetcolor ==5)
        { 

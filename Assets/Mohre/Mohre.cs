@@ -11,13 +11,45 @@ public class Mohre : MonoBehaviour
      public int nutnumber =0;
      public float posx , posy;
      earthposition Earth =  new earthposition();
+     private static Mohre instance;
+
+     
+    public static Mohre Instance
+    {
+        get
+        {
+            
+            if (instance == null)
+            {
+                instance = FindObjectOfType<Mohre>();
+
+                 
+                if (instance == null)
+                {
+                    GameObject singletonObject = new GameObject("SingletonExample");
+                    instance = singletonObject.AddComponent<Mohre>();
+                }
+
+                
+                DontDestroyOnLoad(instance.gameObject);
+            }
+
+            return instance;
+        }
+    }
+
+    
+    public void TestMethod()
+    {
+        Debug.Log("TestMethod called!");
+    }
      void Start()
     {
        ArrangementPositions();
  
     }
 
-    // Update is called once per frame
+     
     void Update()
     {
        
