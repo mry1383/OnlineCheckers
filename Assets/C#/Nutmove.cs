@@ -5,6 +5,7 @@ using MohreFuntions;
 using UnityEngine.UI;
 public class Nutmove : MonoBehaviour
 {
+    //https://www.linkedin.com/in/mohammadreza-yavari/
     Nutmove attackmove;
     Nut Enemykiller;
     public  Mohre Usercode;
